@@ -33,6 +33,10 @@ var app = angular.module('nprApp' , []);
 	
 */
 
+var apiKey = 'MDE2NjgxODUzMDE0MTA0MDg1MDUxZGVhMA001',
+    nprUrl = 'http://api.npr.org/query?id=61&fields=relatedLink,title,byline,text,audio,image,pullQuote,all&output=JSON';
+
+
 app.controller('PlayerController', ['$scope', function($scope) {
 	/* 	Plays as the root controller of this app.
 		To add an audio element, we can either add it in the HTML or in 
@@ -63,6 +67,20 @@ app.controller('PlayerController', ['$scope', function($scope) {
   			$scope.stop();
   		});
   	});
+
+    $http({
+      method: 'JSONP',
+      url: nprUrl + '&apiKey=' + apiKey + '&callback=JSON_CALLBACK'
+    }).success(function (data, status){
+        /*
+          Now we have a list of the stories (data.list.story) in the data object that NPR API returns. 
+          We can now store the list of stories on the scope from the NPR API response object.
+        */
+        $scope.programs = data.list.story;
+
+    }).error(function (data, status){
+
+    })
 
 }]);
 
