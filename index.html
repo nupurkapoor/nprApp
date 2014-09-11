@@ -1,0 +1,22 @@
+<!-- 
+
+When need to instantiate our 'myApp' module on our page and tell Angular where in the DOM tree our app lives. To instantiate the module in a page, we’ll be using the ng-app directive, which tells Angular that we want our module to own that part of the DOM tree. When we refresh the page, Angular will bootstrap myApp. We can set ng-app on any element in the DOM, and that’s where Angular will launch on the page. For an app that will take over the entire page, you can place the ng-app directive on the html element.
+
+
+
+ -->
+
+<!doctype html>
+<html ng-app="nprApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+  	<div ng-controller="PlayerController">
+<!-- We can provide an interactive element to the user by creating a button that binds to an action on the $scope. -->
+  		<button class="button" ng-click="play()" ng-show="!playing">Play</button>
+  		<button class="button" ng-click="stop()" ng-show="playing">Stop</button>
+  		Playing audio: <b>{{ playing }}</b>
+  	</div>
+</html>
