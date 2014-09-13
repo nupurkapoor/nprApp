@@ -38,6 +38,26 @@ ul li {
   box-shadow: inset 0px 3px 0px #a8a8a8;
 }
 
+.playButton .triangle {
+  width: 10px;
+  height: 10px;
+  margin-left: 50%;
+  margin-top: 50%;
+  left: -5px;
+  top: -8px;
+  position: relative;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 18px solid #22a9db;
+  z-index: 2;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
+}
+
+.playButton .triangle:hover { 
+  border-left: 18px solid #3366cc;
+}
 
 .stopButton .square {
   width: 10px;
