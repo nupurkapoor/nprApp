@@ -1,1 +1,59 @@
-<!-- When need to instantiate our 'myApp' module on our page and tell Angular where in the DOM tree our app lives. To instantiate the module in a page, we’ll be using the ng-app directive, which tells Angular that we want our module to own that part of the DOM tree. When we refresh the page, Angular will bootstrap myApp. We can set ng-app on any element in the DOM, and that’s where Angular will launch on the page. For an app that will take over the entire page, you can place the ng-app directive on the html element.A directive is a fancy name for a function that’s attached to a DOM element. Directives have the ability to execute methods, define behavior, attach controllers and $scope objects, manipulate the DOM, and more. When the browser starts up and starts to parse the HTML, all directives are passed over like any other attribute.When the AngularJS app is bootstrapped and the Angular compiler starts walking through the DOM tree, starting from the DOM element that declares ng-app, it will parse the HTML looking for these directive functions. When it finds a DOM element with one or more directives, it will collect, sort, and run the directive functions in priority order. The priority is determined by the individual directives. In Angular, we use directives to bind behavior to the DOM.The double-curly{{}}expression directive registers a listener for the expression inside the{{expression}}using the $watch() function.This function enables Angular to update the view. Expressions do not throw errors if an expression results in a TypeError or a ReferenceError. Expressions do not allow for any control flow functions conditionals;e.g., if/else, but can accept filter chains. # The ng-init directive is a function that runs at bootstrap time (before runtime). It allows to set default variables prior to running any other functions during runtime! # The ng-repeat directive loads a template for each item in a collection. The template it clones is the element upon which we call ng-repeat. Each copy of the template gets its own scope (neat!! - means woul dhelp with individuality). Sorta like foreach?? --><!doctype html><html ng-app="nprApp"><head><script src="js/vendor/custom.modernizr.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script><script src="js/main.js"></script><link rel="stylesheet" type="text/css" href="css/normalize.css"/><link rel="stylesheet" type="text/css" href="css/foundation.min.css"/><link rel="stylesheet" type="text/css" href="css/styles.css"/></head><body ng-controller="FrameController"><div class="row"><h1>NPR player</h1></div><div class="container row"><div class="large-8 small-8 columns"><h2>Player</h2><div ng-controller="PlayerController"><div class="container"><div player-view class="large-12 columns small-12" ng-model="player"></div></div><ul id="programs_list" class=""><li ng-repeat="program in programs"><span npr-link player="player" ng-model="program"></span></li></ul></div></div><div class="large-4 small-4 columns" ng-controller="RelatedController"><h2>Related content</h2><ul id="related"><li ng-repeat="s in related"><a href="{{s.link}}">{{s.caption}}</a></li></ul></div></div></body></html>
+<!-- 
+
+When need to instantiate our 'myApp' module on our page and tell Angular where in the DOM tree our app lives. To instantiate the module in a page, we’ll be using the ng-app directive, which tells Angular that we want our module to own that part of the DOM tree. When we refresh the page, Angular will bootstrap myApp. We can set ng-app on any element in the DOM, and that’s where Angular will launch on the page. For an app that will take over the entire page, you can place the ng-app directive on the html element.
+
+A directive is a fancy name for a function that’s attached to a DOM element. Directives have the ability to execute methods, define behavior, attach controllers and $scope objects, manipulate the DOM, and more. When the browser starts up and starts to parse the HTML, all directives are passed over like any other attribute.
+
+When the AngularJS app is bootstrapped and the Angular compiler starts walking through the DOM tree, starting from the DOM element that declares ng-app, it will parse the HTML looking for these directive functions. When it finds a DOM element with one or more directives, it will collect, sort, and run the directive functions in priority order. The priority is determined by the individual directives. In Angular, we use directives to bind behavior to the DOM.
+
+The double-curly {{}} expression directive registers a listener for the expression inside the {{ expression }} using the $watch() function.This function enables Angular to update the view. Expressions do not throw errors if an expression results in a TypeError or a ReferenceError. Expressions do not allow for any control flow functions conditionals; e.g., if/else, but can accept filter chains.
+
+  # The ng-init directive is a function that runs at bootstrap time (before runtime). It allows to set default variables prior to running any other functions during runtime!
+
+  # The ng-repeat directive loads a template for each item in a collection. The template it clones is the element upon which we call ng-repeat. Each copy of the template gets its own scope (neat!! - means woul dhelp with individuality). Sorta like foreach??
+
+
+ -->
+
+<!doctype html>
+<html ng-app="nprApp">
+  <head>
+    <script src="js/vendor/custom.modernizr.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  </head>
+  <body ng-controller="FrameController">
+
+    <div class="row">
+      <h1>NPR player</h1>
+    </div>
+
+    <div class="container row">
+      <div class="large-8 small-8 columns">
+      <h2>Player</h2>
+        <div ng-controller="PlayerController">
+
+          <div class="container">
+            <div player-view class="large-12 columns small-12" ng-model="player"></div>
+          </div>
+        
+          <ul id="programs_list" class="">
+            <li ng-repeat="program in programs">
+              <span npr-link player="player" ng-model="program"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="large-4 small-4 columns" ng-controller="RelatedController">
+        <h2>Related content</h2>
+        <ul id="related">
+          <li ng-repeat="s in related"><a href="{{ s.link }}">{{ s.caption }}</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
