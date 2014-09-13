@@ -1,1 +1,1 @@
-An NPR audio player that would list current stories on the show Morning Edition and play them in browser.
+An NPR audio player that would list current stories on the show "Morning Edition" and play them in browser.
