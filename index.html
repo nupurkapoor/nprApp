@@ -21,7 +21,7 @@
           </div>
         
           <ul id="programs_list" class="">
-            <li ng-repeat="program in programs">
+            <li ng-repeat="program in programs" ng-show="program.audio[0].format.mp4.$text != null">
               <span npr-link player="player" ng-model="program"></span>
             </li>
           </ul>

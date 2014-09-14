@@ -12,6 +12,7 @@ app.factory('player', function(audio, $rootScope) {
       if (player.playing) player.stop();
 
       var url = program.audio[0].format.mp4.$text;
+
       player.current = program;
       audio.src = url;
       audio.play();
