@@ -1,9 +1,7 @@
 <div class="row" ng-model="player">
  
   <div class="small-2 columns">
-    <button class="stopButton" ng-click="stop();">
-      <div class="circle"></div>
-    </button>
+    <button class="stopButton" ng-click="stop();"><div class="square"></div></button>
   </div>
 
   <div class="player small-10 columns">
@@ -11,8 +9,7 @@
 
     <div class="row">
       <div class="">
-        <input class="slider" ng-model="secondsProgress" ng-init="secondsProgress=0"  type="range" id="seek" 
-          value="{{ secondsProgress }}" max="{{ duration }}" />
+        <input type="range" id="seek" value="{{ secondsProgress }}" max="{{ duration }}" ng-model="secondsProgress" ng-init="secondsProgress=0" />
       </div><!-- / player -->
     </div>
   </div>

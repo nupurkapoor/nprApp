@@ -1,3 +1,5 @@
+/* sole purpose of this service is to make requests */
+
 app.factory('nprService', function($http) {
     var doRequest = function(apiKey) {
       return $http({

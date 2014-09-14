@@ -1,10 +1,10 @@
 <!doctype html>
 <html ng-app="nprApp">
   <head>
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/foundation.min.css"/>
+    <script src="js/vendor/custom.modernizr.js"></script>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
-  </head>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css"/></head>
   <body>
 
     <div class="row">
@@ -35,7 +35,11 @@
         </ul>
       </div>
     </div>
-    <script src="js/vendor/custom.modernizr.js"></script>
+    <script>
+      document.write('<script src=js/vendor/'
+        + ('__proto__' in {} ? 'zepto' : 'jquery')
+        + '.js><\/script>');
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/directives/nprLink.js"></script>
@@ -45,5 +49,8 @@
     <script src="js/services/nprService.js"></script>
     <script src="js/controllers/player.js"></script>
     <script src="js/controllers/related.js"></script>
+    <script type="text/javascript">
+      $(document).foundation();
+    </script>
   </body>
 </html>
