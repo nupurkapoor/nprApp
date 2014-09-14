@@ -5,6 +5,11 @@ ul li {
   padding: 10px 0;
 }
 
+.program a {
+  padding-left: 25px;
+  display: inline-block; 
+}
+
 .player {
   margin-bottom: 20px;
 }
