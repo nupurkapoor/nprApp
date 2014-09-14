@@ -1,3 +1,15 @@
+.application {
+  background-color: #FAFFFF;
+}
+
+h1.pagetitle {
+  color: #F53D43;
+}
+
+h2.supportivetitle {
+  color: #292933;
+}
+
 ul {
   list-style-type: none;
 }
@@ -7,6 +19,7 @@ ul li {
 
 .program a {
   padding-left: 25px;
+  color: #00BFB9;
   display: inline-block; 
 }
 
